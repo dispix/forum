@@ -1,0 +1,35 @@
+<div class="user-page">
+	<h2><?= htmlentities($user->getLogin())?></h2>
+	<p><em>Enregistré le <?=$user->getDateRegistered()?></em></p>
+	<img class ="avatar" src="<?=$user->getAvatar()?>" alt="avatar"><?php if (strtotime($user->getDateLastConnect()) > time()-60) {
+		echo ('<img class="icon-session" src="public/img/icon_user_online.gif" alt="">');
+	}?>
+	<div class="row">
+		<span class="col-xs-3"></span>
+		<span class="col-xs-3">Email</span>
+		<span class="col-xs-3"><?=htmlentities($user->getEmail())?></span>
+	</div>
+	<div class="row">
+		<span class="col-xs-3"></span>
+		<span class="col-xs-3">Topics</span>
+		<span class="col-xs-3"><?=count($topicManager->readByAuthor($user))?></span>
+	</div>
+	<div class="row">
+		<span class="col-xs-3"></span>
+		<span class="col-xs-3">Messages</span>
+		<span class="col-xs-3"><?=count($messageManager->readByAuthor($user))?></span>
+	</div>
+	<div class="row">
+		<span class="col-xs-3"></span>
+		<span class="col-xs-3">Sections</span>
+		<span class="col-xs-3"><?=count($sectionManager->readByAuthor($user))?></span>
+	</div>
+	<div class="row">
+		<span class="col-xs-3"></span>
+		<span class="col-xs-3">Subsections</span>
+		<span class="col-xs-3"><?=count($subsectionManager->readByAuthor($user))?></span>
+	</div>
+	<hr/>
+	<h3>Last messages</h3>
+</div>
+	<?php require('controllers/content/user_list.php'); ?>

@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="page-title col-xs-12 text-center">
+		<h1><?php echo(htmlentities($topic -> getName())) ?></h1>
+	</div>
+	<div class="col-xs-12 subsection-position">
+		<a href="#collapseNewTopic" role="button" data-toggle="collapse" aria-controls="collapseNewTopic"
+		class="btn btn-default">New message <span class="caret"></span></a>
+		<div class="collapse" id="collapseNewTopic">
+			<form action="" method="post">
+				<input type="hidden" value="create" name="action">
+				<div class="form-group">
+					<label for="create_message" class="control-label">Message:</label>
+					<textarea name="create_message" id="create_message" class="form-control" cols="30"
+							  rows="10" required><?=  (isset($created_message)) ? htmlentities($created_message) : ""; ?></textarea>
+				</div>
+				<div class="form-group text-right">
+					<button class="btn btn-primary " type="submit">Send</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-xs-12">
+		<?php require('controllers/content/message_list.php');?>
+	</div>
+</div>

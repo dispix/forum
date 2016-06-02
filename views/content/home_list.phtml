@@ -1,0 +1,34 @@
+<div class="section-wrapper col-xs-12">
+	<div class="section-banner">
+		<img src="<?php echo(htmlentities($section -> getImage())) ?>" alt="section-banner">
+	</div>
+	<div class="section-content">
+		<div class="section-name col-xs-12 col-sm-8">
+			<h2>
+				<a href="?page=section&amp;id=<?php echo($section -> getId()) ?>">
+					<?php echo(htmlentities($section -> getName())) ?>
+				</a>
+				<?php if(array_key_exists($section -> getName(), $newMessagesArray))
+				{
+					?>
+					<span class="badge"><?=$newMessagesArray[$section -> getName()];?></span>
+					<?php
+				}
+				?>
+			</h2>
+		</div>
+		<div class="section-author hidden-xs col-sm-4 text-right">
+			<p>
+				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 
+				<a href="?page=user&amp;id=<?php echo(intval($section -> getIdAuthor())) ?>">
+					<?php echo(htmlentities($section -> getAuthor() -> getLogin())); ?> 
+				</a>
+				<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 
+				<?php echo(date('Y-m-d',strtotime($section -> getDateCreated()))); ?>
+			</p>
+		</div>
+		<div class="section-description col-xs-12">
+			<p><?php echo(htmlentities($section -> getDescription())) ?></p>
+		</div>
+	</div> <!-- section-content -->
+</div> <!-- section-wrapper -->

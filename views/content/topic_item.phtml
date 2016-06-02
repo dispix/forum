@@ -1,0 +1,22 @@
+<div class="topic-wrapper">
+	<div class="topic-title">
+		<h2>
+			<a href="?page=topic&amp;id=<?= $topic->getId(); ?>">
+				<?= htmlentities($topic->getName()); ?>
+			</a>
+			<?php if(array_key_exists($topic -> getName(), $newMessagesArray))
+			{
+				?>
+				<span class="badge"><?= $newMessagesArray[$topic -> getName()];?></span>
+				<?php
+			}
+			?>
+		</h2>
+	</div>
+	<div class="topic-infos">
+		<p>
+		    <em>Created by <a href="?page=user&amp;id=<?= $topic->getAuthor()->getId();?>"><?= htmlentities($topic->getAuthor()->getLogin()); ?></a></em>
+		    on <?= date("D j F Y", strtotime($topic->getDatecreated())); ?>
+		</p>
+	</div>
+</div>

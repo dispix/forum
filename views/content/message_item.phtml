@@ -1,0 +1,27 @@
+<div class="comment-wrapper col-xs-12">
+    <div class="comment-banner hidden-xs col-sm-2 col-md-2 col-lg-1">
+        <img src="<?php echo(htmlentities($message->getAuthor()->getAvatar())) ?>" alt="comment-banner">
+    </div>
+    <div class="comment-body col-xs-12 col-sm-10 col-md-10 col-lg-11">
+        <p class="comment-infos text-left">
+            <span class="comment-author">
+                <strong>
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 
+                    <a href="?page=user&amp;id=<?= $message->getAuthor()->getId(); ?>">
+                        <?= htmlentities($message->getAuthor()->getLogin()); ?>
+                    </a>
+                </strong>
+            </span>
+            -
+            <span class="comment-date">
+                <em>
+                    <?= date("D j F Y", strtotime($message->getDatecreated())); ?>
+                </em>
+            </span>
+        </p>
+
+        <p class="comment-content">
+            <?= nl2br(htmlentities($message->getContent())); ?>
+        </p>
+    </div> <!-- comment-body -->
+</div> <!-- comment-wrapper -->

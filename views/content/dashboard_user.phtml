@@ -1,0 +1,31 @@
+<tr>
+	<form action="" method="POST">
+		<td>
+			<a href="?page=user&id=<?php echo($user -> getId()) ?>"><?php echo htmlentities($user -> getLogin()) ?></a>
+		</td>
+		<td><?php echo htmlentities($user -> getEmail()) ?></td>
+		<td><?php echo date('d/m/y', strtotime($user -> getDateRegistered())) ?></td>
+		<td><?php echo date('d/m/y - H:i:s', strtotime($user -> getDateRegistered())) ?></td>
+
+		<td>
+		<input type="hidden" name="user_id" value="<?php echo $user -> getId() ?>">
+			<select name="user_status" class="form-control">
+				<option value="0" <?php if($user -> getStatus() == 0) echo 'selected' ?>>Standard</option>
+				<option value="2" <?php if($user -> getStatus() > 0) echo 'selected' ?>>Administrator</option>
+			</select>
+
+		</td>
+		<td>
+			<input type="date" name="user_dateBan" class="form-control" value="<?php echo date('Y-m-d', strtotime($user -> getDateBan())) ?>">
+		</td>
+		<td>
+			<button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+	</form>
+	</td>
+	<td>
+		<form action="" method="POST">
+			<input type="hidden" name="user_id" value="<?php echo $user -> getId() ?>">
+			<button class="btn btn-danger" name="user_delete" value="1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+		</form>
+	</td>
+</tr>

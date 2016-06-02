@@ -1,0 +1,59 @@
+<div class="profile-page">
+	<h2><?=htmlentities($user->getLogin())?></h2>
+	<p><em>Enregistré le <?=$user->getDateRegistered()?></em></p>
+	<img class="avatar" src="<?=$user->getAvatar()?>" alt="avatar"><?php if (strtotime($user->getDateLastConnect()) > time()-60) {
+		echo ('<img class="icon-session" src="public/img/icon_user_online.gif" alt="">');}?>
+	<form method="post" action="?page=user&amp;id=<?=$_SESSION['id']?>" role="form">
+		<div class="row form-group">
+			<span class="col-xs-3"></span>
+			<label for="avatar" class="col-xs-3">Avatar</label>
+			<input type="url" name="avatar" id="avatar" placeholder="URL avatar" value="<?=htmlentities($avatar)?>" class="col-xs-3" class="form-control" />
+		</div>
+		<div class="row form-group">
+			<span class="col-xs-3"></span>
+			<label for="email" class="col-xs-3">E-mail</label>
+			<input type="email" name="email" id="email" placeholder="E-mail" value="<?=htmlentities($email)?>" class="col-xs-3" class="form-control" />
+		</div>
+		<div class="row">
+			<span class="col-xs-3"></span>
+			<span class="col-xs-3">Topics</span>
+			<span class="col-xs-3"><?=count($topicManager->readByAuthor($user))?></span>
+		</div>
+		<div class="row">
+			<span class="col-xs-3"></span>
+			<span class="col-xs-3">Messages</span>
+			<span class="col-xs-3"><?=count($messageManager->readByAuthor($user))?></span>
+		</div>
+		<div class="row">
+			<span class="col-xs-3"></span>
+			<span class="col-xs-3">Sections</span>
+			<span class="col-xs-3"><?=count($sectionManager->readByAuthor($user))?></span>
+		</div>
+		<div class="row">
+			<span class="col-xs-3"></span>
+			<span class="col-xs-3">Subsections</span>
+			<span class="col-xs-3"><?=count($subsectionManager->readByAuthor($user))?></span>
+		</div>
+		<fieldset class="row">
+			<legend>Modifier votre mot de passe</legend>
+			<div class="form-group col-xs-12 col-sm-6 col-sm-push-6 col-md-4 col-md-push-0">
+				<label for='mdp1'>Ancien mot de passe</label>
+				<input type='password' name='password-old' placeholder='Votre ancien mot de passe' id='mdp1' class='form-control' />
+			</div>
+			<div class="form-group col-xs-12 col-sm-6 col-sm-pull-6 col-md-4 col-md-pull-0">
+				<label for='mdp2'>Nouveau mot de passe</label>
+				<input type='password' name='password-new' placeholder='8 à 31 caractères' id='mdp2' class='form-control' />
+			</div>
+			<div class="form-group col-xs-12 col-sm-6 col-md-4">
+				<label for='mdp3'>Vérification du nouveau mot de passe</label>
+				<input type='password' name='password-new2' placeholder='Resaisir le nouveau mot de passe' id='mdp3' class='form-control' />
+			</div>
+			<div class="col-xs-12 text-right">
+				<button type='submit' class='btn btn-success'>Enregistrer les modifications</button>
+			</div>
+		</fieldset>
+	</form>
+	<hr/>
+	<h3>Last messages</h3>
+</div>
+	<?php require('controllers/content/user_list.php'); ?>

@@ -1,0 +1,34 @@
+<div class="subsection-wrapper col-xs-12">
+	<div class="subsection-banner">
+		<img src="<?php echo(htmlentities($subsection -> getImage())) ?>" alt="subsection-banner">
+	</div>
+	<div class="subsection-content">
+		<div class="subsection-name col-xs-12 col-sm-8">
+			<h2>
+				<a href="?page=subsection&amp;id=<?php echo($subsection -> getId()) ?>">
+					<?php echo(htmlentities($subsection -> getName())) ?>
+				</a>
+				<?php if(array_key_exists($subsection -> getName(), $newMessagesArray))
+				{
+					?>
+					<span class="badge"><?= $newMessagesArray[$subsection -> getName()];?></span>
+					<?php
+				}
+				?>
+			</h2>
+		</div>
+		<div class="subsection-author hidden-xs col-sm-4 text-right">
+			<p>
+				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 
+				<a href="?page=user&amp;id=<?php echo(intval($section -> getIdAuthor())) ?>">
+					<?php echo(htmlentities($subsection -> getAuthor() -> getLogin())); ?> 
+				</a>
+				<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 
+				<?php echo(date('Y-m-d',strtotime($subsection -> getDateCreated()))); ?>
+			</p>
+		</div>
+		<div class="subsection-description col-xs-12">
+			<p><?php echo(htmlentities($subsection -> getDescription())) ?></p>
+		</div>
+	</div> <!-- subsection-content -->
+</div> <!-- subsection-wrapper -->

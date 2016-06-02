@@ -1,0 +1,32 @@
+<div class="page-title col-xs-12">
+	<h1>Register</h1>
+</div>
+<div class="register-form col-xs-12">
+	<form action="?page=register" method="POST">
+		<fieldset>
+			<div class="row">
+				<div class="form-group col-xs-12 col-sm-6">
+					<label for="email">Email</label>
+					<input type="email" class="form-control" placeholder="Email" name="register_email" value="<?=htmlentities($email)?>">
+				</div>
+				<div class="form-group col-xs-12 col-sm-6">
+					<label for="login">Login</label>
+					<input type="text" class="form-control" placeholder="Login" name="register_login" value="<?=htmlentities($login)?>">
+				</div>
+				<div class="form-group col-xs-12 col-sm-6">
+					<label for="password">Password</label>
+					<input type="password" class="form-control" placeholder="Password" name="register_password" value="">
+				</div>
+				<div class="form-group col-xs-12 col-sm-6">
+				<label for="passwordRepeat">Password repeat</label>
+					<input type="password" class="form-control" placeholder="Retype Password" name="register_passwordRepeat" value="">
+				</div>
+			</div>
+		</fieldset>
+		<div class="row">
+			<div class="submit col-xs-12 text-right">
+				<button type="submit" class="btn btn-success">Register</button>
+			</div>
+		</div>
+	</form>
+</div>

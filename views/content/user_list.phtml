@@ -1,0 +1,31 @@
+<div class="message-wrapper col-xs-12">	
+	<div class="message-content col-xs-12 col-sm-12 col-md-12">
+		<div class="message-path col-xs-12">
+			<p>
+				<a href="?page=section&amp;id=<?=$message->getTopic()->getSubsection()->getSection()->getId()?>">
+					<?=htmlentities($message->getTopic()->getSubsection()->getSection()->getName())?>
+				</a> > 
+				<a href="?page=subsection&amp;id=<?=$message->getTopic()->getSubsection()->getId()?>">
+					<?=htmlentities($message->getTopic()->getSubsection()->getName())?>
+				</a> > 
+				<a href="?page=topic&amp;id=<?=$message->getTopic()->getId()?>">
+					<?=htmlentities($message->getTopic()->getName())?>
+				</a>
+			</p>
+			<em>
+				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+				En réponse à 
+				<a href="?page=user&amp;id=<?=$message->getTopic()->getAuthor()->getId()?>">
+					<?=htmlentities($message->getTopic()->getAuthor()->getLogin())?>
+				</a> 
+				le <?= date("D j F Y", strtotime($message->getDatecreated())); ?>
+			</em>
+		</div>
+		<div class="col-xs-6"></div>
+		<div class="message-content col-xs-12">
+			<p>
+				<?=htmlentities($message->getContent())?>
+			</p>
+		</div>
+	</div>
+</div>

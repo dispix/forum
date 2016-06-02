@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="section-head col-xs-12 text-center">
+		<img src="<?php echo(htmlentities($section -> getImage())); ?>" alt="section-logo">
+		<h1><?php echo(htmlentities($section -> getName())) ?></h1>
+	</div>
+	<div class="form-wrapper col-xs-12">
+		<a href="#collapseNewSubsection" role="button" data-toggle="collapse" aria-controls="collapseNewSubsection" class="btn btn-md btn-default">New subsection <span class="caret"></span></a>
+
+		<div class="collapse" id="collapseNewSubsection">
+			<form action="?page=section&amp;id=<?php echo($_GET['id']) ?>" method="POST">
+				<div class="row">
+					<div class="form-title col-xs-12">
+						<h3>Create new subsection</h3>
+					</div>
+					<div class="form-group col-xs-12 col-sm-4">
+						<label for="subsection_name" class="control-label">Name:</label>
+						<input type="text" class="form-control" name="subsection_name" id="subsection_name"
+							   value="<?=  (isset($subsection_name)) ? htmlentities($subsection_name) : "" ;?>">
+					</div>
+					<div class="form-group col-xs-12 col-sm-8">
+						<label for="subsection_banner" class="control-label">Banner:</label>
+						<input type="text" class="form-control" name="subsection_banner" id="subsection_banner" value="<?=  (isset($subsection_banner)) ? htmlentities($subsection_banner) : ""; ?>">
+					</div>
+					<div class="form-group col-xs-12">
+						<label for="subsection_description" class="control-label">Description:</label>
+						<textarea name="subsection_description" id="subsection_description" class="form-control" cols="30"
+							rows="2"><?=  (isset($subsection_description)) ? htmlentities($subsection_description) : ""; ?></textarea>
+					</div>
+					<div class="form-group col-xs-12 text-right">
+						<button class="btn btn-primary" type="submit">Send</button>
+					</div>
+				</div> <!-- row -->
+			</form>
+		</div> <!-- collapse -->
+	</div> <!-- form-wrapper -->
+	<div class="sections-wrapper col-xs-12">
+		<?php require('controllers/content/section_list.php') ?>
+	</div>
+</div> <!-- row -->

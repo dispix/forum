@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="page-title col-xs-12 text-center">
+		<h1>Home</h1>
+	</div>
+	<div class="form-wrapper col-xs-12">
+		<a href="#collapseNewSection" role="button" data-toggle="collapse" aria-controls="collapseNewSection" class="btn btn-md btn-default">New section <span class="caret"></span></a>
+
+		<div class="collapse" id="collapseNewSection">
+			<form action="?page=home" method="POST">
+				<div class="row">
+					<div class="form-title col-xs-12">
+						<h3>Create new section</h3>
+					</div>
+					<!-- <input type="hidden" value="create" name="action"> -->
+					<div class="form-group col-xs-12 col-sm-4">
+						<label for="section_name" class="control-label">Name:</label>
+						<input type="text" class="form-control" name="section_name" id="section_name"
+							   value="<?=  (isset($section_name)) ? htmlentities($section_name) : "" ;?>">
+					</div>
+					<div class="form-group col-xs-12 col-sm-8">
+						<label for="section_banner" class="control-label">Banner:</label>
+						<input type="text" class="form-control" name="section_banner" id="section_banner" value="<?=  (isset($section_banner)) ? htmlentities($section_banner) : ""; ?>" >
+					</div>
+					<div class="form-group col-xs-12">
+						<label for="section_description" class="control-label">Description:</label>
+						<textarea name="section_description" id="section_description" class="form-control" cols="30"
+							rows="2"><?=  (isset($section_description)) ? htmlentities($section_description) : ""; ?></textarea>
+					</div>
+					<div class="form-group col-xs-12 text-right">
+						<button class="btn btn-primary" type="submit">Send</button>
+					</div>
+				</div> <!-- row -->
+			</form>
+		</div> <!-- collapse -->
+	</div> <!-- form-wrapper -->
+	<div class="sections-wrapper col-xs-12">
+		<?php require('controllers/content/home_list.php') ?>
+	</div>
+</div> <!-- row -->

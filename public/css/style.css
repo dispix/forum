@@ -1,0 +1,200 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body, html {
+	height: 100%;
+}
+a:hover {
+	text-decoration: none;
+}
+.wrap {
+	min-height: 100%;
+	height: auto !important;
+	/* Negative indent footer by it's height */
+	margin: 0 auto -60px;
+	padding-top: 20px;
+}
+.main {
+    overflow: auto;
+    padding-bottom: 150px;
+}
+/* Footer */
+footer {
+	margin: 0;
+	height: 60px;
+	background-color: rgba(240, 240, 240, 1);
+	padding-top: 20px;
+	position: relative;
+	z-index: 2;
+}
+/* Success */
+.alert-success {
+	position: relative;
+}
+.alert-success a {
+	position: absolute;
+	color: #C3BCBC;
+	top: 15px;
+	right: 20px;
+}
+/* Menu */
+.navbar-right a:hover {
+	background-color: #D0C7C7 !important;
+}
+.nav .breadcrumb {
+	margin: 0;
+	margin-left: 15px;
+	padding: 15px 10px;
+	background-color: rgb(248, 248, 248);
+}
+/* Home page */
+.section-wrapper {
+	margin-top: 5px;
+	padding: 15px;
+	background-color: rgba(245, 245, 245, 1);
+	border-radius: 5px;
+}
+.section-name {
+	word-wrap: break-word;
+}
+.section-name h2 {
+	margin-top: -6px;
+}
+.section-content {
+	width: 90%; /* valeur pour les navigateurs ne supportant pas calc() */
+	width: calc(100% - 85px);
+	display: inline-block;
+}
+.section-banner {
+	vertical-align: top;
+	width: 80px;
+	display: inline-block;
+}
+.section-banner img {
+	border-radius: 5px;
+	max-width: 80px;
+	max-height: 80px;
+}
+.section-description {
+	text-align: justify;
+	word-wrap: break-word;
+}
+/* Section page */
+.section-head h1 {
+	margin-top: 0;
+}
+.section-head img {
+	max-width: 100px;
+	max-height: 100px;
+	border-radius: 5px;
+}
+.subsection-wrapper {
+	margin-top: 5px;
+	padding: 15px;
+	background-color: rgba(245, 245, 245, 1);
+	border-radius: 5px;
+}
+.subsection-name h2 {
+	margin-top: -6px;
+}
+.subsection-content {
+	width: 90%; /* valeur pour les navigateurs ne supportant pas calc() */
+	width: calc(100% - 85px);
+	display: inline-block;
+	word-wrap: break-word;
+}
+.subsection-description {
+	text-align: justify;
+}
+.subsection-banner {
+	vertical-align: top;
+	width: 80px;
+	display: inline-block;
+}
+.subsection-banner img {
+	border-radius: 5px;
+	max-width: 80px;
+	max-height: 80px;
+}
+/* Subsection */
+.subsection-head h1 {
+	margin-top: 0;
+}
+.subsection-head img {
+	max-width: 100px;
+	max-height: 100px;
+	border-radius: 5px;
+}
+.topic-wrapper {
+	margin-top: 5px;
+	padding: 1px 15px 15px;
+	background-color: rgba(245, 245, 245, 1);
+	border-radius: 5px;
+}
+.topic-name h2 {
+	margin-top: -15px;
+}
+/* Topics */
+.comment-wrapper {
+	margin-top: 5px;
+	padding: 15px 0;
+	background-color: rgba(245, 245, 245, 1);
+	border-radius: 5px;
+}
+.comment-author {
+	text-transform: uppercase;
+	font-size: 1.6rem;
+}
+.comment-date {
+	font-size: 1.2rem;
+}
+.comment-content {
+	text-align: justify;
+	font-size: 1.4rem;
+}
+.comment-banner img {
+	margin-top: -5px;
+	max-width: 80px;
+	max-height: 80px;
+	border-radius: 5px;
+}
+/* User */
+.user-page {
+	position: relative;
+	text-align: center;
+}
+.user-page img {
+	border-radius: 10px;
+}
+.message-wrapper {
+	margin-top: 5px;
+	padding: 15px 0;
+	background-color: rgba(245, 245, 245, 1);
+	border-radius: 5px;
+}
+.message-path {
+	margin-bottom: 10px;
+}
+.icon-session {
+	position: absolute;
+	width: 80px;
+	right: 30%;
+}
+.avatar {
+	margin-bottom: 10px;
+}
+/* Profile */
+.profile-page {
+	position: relative;
+	text-align: center;
+}
+.profile-page fieldset {
+	margin-top: 20px;
+}
+@media screen and (max-width: 600px) {
+	.icon-session {
+		right: 10%;
+	}
+}

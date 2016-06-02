@@ -1,0 +1,9 @@
+[Tue Feb 23 17:35:34.060937 2016] [:error] [pid 19206] [client 127.0.0.1:60060] PHP Fatal error:  Call to undefined function mysqli_connect() in /var/www/forum.dispix.net/index.php on line 9
+[Sat Mar 19 02:28:01.888356 2016] [:error] [pid 19825] [client 208.109.248.8:53345] script '/var/www/forum.dispix.net/wp-login.php' not found or unable to stat
+[Tue Mar 22 04:23:39.574931 2016] [:error] [pid 14976] [client 208.109.248.8:65310] script '/var/www/forum.dispix.net/wp-login.php' not found or unable to stat
+[Wed Mar 23 08:45:51.488435 2016] [:error] [pid 22233] [client 208.109.248.8:53427] script '/var/www/forum.dispix.net/wp-login.php' not found or unable to stat
+[Sat Mar 26 08:34:34.933402 2016] [:error] [pid 18325] [client 192.169.233.173:60442] script '/var/www/forum.dispix.net/wp-login.php' not found or unable to stat
+[Sat Mar 26 09:57:00.027170 2016] [:error] [pid 18326] [client 79.143.178.160:37830] script '/var/www/forum.dispix.net/wp-login.php' not found or unable to stat
+[Thu Mar 31 10:23:40.312848 2016] [:error] [pid 18617] [client 198.50.175.244:61951] script '/var/www/forum.dispix.net/wp-login.php' not found or unable to stat
+[Sat Apr 16 15:21:10.328627 2016] [:error] [pid 29604] [client 198.50.175.244:55930] script '/var/www/forum.dispix.net/wp-login.php' not found or unable to stat
+[Tue May 31 18:34:49.011214 2016] [:error] [pid 1158] [client 106.187.103.110:38166] script '/var/www/forum.dispix.net/echo.php' not found or unable to stat

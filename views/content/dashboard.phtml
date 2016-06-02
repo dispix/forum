@@ -1,0 +1,65 @@
+<div class="dashboard row">
+	<div class="page-title col-xs-12">
+		<h1>Dashboard</h1>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<a href="?page=dashboard_users">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Users</h3>
+				</div>
+				<div class="panel-body">
+					<p><?php echo(count($users)) ?> users</p>
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<a href="?page=dashboard_sections">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Sections</h3>
+				</div>
+				<div class="panel-body">
+					<p><?php echo(count($sections)) ?> sections</p>
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<a href="?page=dashboard_subsections">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Subsections</h3>
+				</div>
+				<div class="panel-body">
+					<p><?php echo(count($subsections)) ?> subsections</p>
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<a href="?page=dashboard_topics">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Topics</h3>
+				</div>
+				<div class="panel-body">
+					<p><?php echo(count($topics)) ?> topics</p>
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<a href="?page=dashboard_messages">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Posts</h3>
+				</div>
+				<div class="panel-body">
+					<p><?php echo(count($messages)) ?> posts</p>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>

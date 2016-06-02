@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="subsection-head col-xs-12 text-center">
+		<img src="<?php echo(htmlentities($subsection -> getImage())); ?>" alt="subsection-logo">
+		<h1><?php echo(htmlentities($subsection -> getName())) ?></h1>
+	</div>
+	<div class="col-xs-12">
+		<a href="#collapseNewTopic" role="button" data-toggle="collapse" aria-controls="collapseNewTopic"
+		   class="btn btn-md btn-default">New topic <span class="caret"></span></a>
+
+		<div class="collapse" id="collapseNewTopic">
+			<form action="" method="post">
+				<h3>Create new topic</h3>
+				<input type="hidden" value="create" name="action">
+				<div class="form-group">
+					<label for="create_name" class="control-label">Name:</label>
+					<input type="text" class="form-control" name="create_name" id="create_name" placeholder="Required" value="<?=  (isset($created_name)) ? htmlentities($created_name) : "" ;?>" required>
+				</div>
+				<div class="form-group">
+					<label for="create_message" class="control-label">Message:</label>
+					<textarea name="create_message" id="create_message" class="form-control" cols="30"
+							  rows="10" required><?=  (isset($created_message)) ? htmlentities($created_message) : ""; ?></textarea>
+				</div>
+				<div class="form-group text-right">
+					<button class="btn btn-primary " type="submit">Send</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-xs-12">
+		<?php require "controllers/content/topic_list.php"; ?>
+	</div>
+</div> <!-- row -->
