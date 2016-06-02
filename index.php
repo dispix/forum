@@ -8,7 +8,8 @@ session_start();
 /**
  * INITIALISE DATABASE HERE
  */
-$db = mysqli_connect('', '', '', '');
+require('db.php');
+$db = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 if ($db === false)
 	die(mysqli_connect_error());
